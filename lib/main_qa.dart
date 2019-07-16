@@ -7,6 +7,9 @@ void main() {
   FlavorConfig(
     flavor: Flavor.QA,
     color: Colors.red,
+    values: FlavorValues(
+      apiUrl: 'https://api.myjson.com/bins/lmkhn',
+    ),
   );
   runApp(MyApp());
 }
