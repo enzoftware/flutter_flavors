@@ -8,7 +8,7 @@ void main() {
     flavor: Flavor.PRODUCTION,
     color: Colors.blue,
     values: FlavorValues(
-      apiUrl: 'https://jsonplaceholder.typicode.com/photos',
+      apiUrl: '/photos',
     ),
   );
   runApp(MyApp());
