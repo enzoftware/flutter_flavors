@@ -1,13 +1,21 @@
+import 'dart:core';
+import 'dart:core' as prefix0;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_flavors/utils.dart';
 
-enum Flavor { DEV, QA, PRODUCTION, DEMO }
+enum Flavor {
+  DEV,
+  QA,
+  PRODUCTION,
+  DEMO,
+}
 
 class FlavorValues {
   FlavorValues({@required this.apiUrl});
   final String apiUrl;
-
-  //Add other flavor specific values, e.g database name
+  /// Add other flavor specific values, 
+  /// e.g database name, free or paid
 }
 
 class FlavorConfig {
@@ -27,7 +35,7 @@ class FlavorConfig {
       StringUtils.enumName(flavor.toString()),
       color,
       values,
-    ); 
+    );
     return _instance;
   }
 
