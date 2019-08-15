@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_flavors/api.dart';
-import 'package:flutter_flavors/flavor_config.dart';
-import 'package:flutter_flavors/model.dart';
+import 'package:flutter_flavors/data/api.dart';
+import 'package:flutter_flavors/config/flavor_config.dart';
+import 'package:flutter_flavors/data/model.dart';
 
 class MyApp extends StatefulWidget {
   final api = PhotoApi();

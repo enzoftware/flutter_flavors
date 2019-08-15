@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
-import 'package:flutter_flavors/flavor_config.dart';
-import 'package:flutter_flavors/model.dart';
+import 'package:flutter_flavors/config/flavor_config.dart';
+import 'package:flutter_flavors/data/model.dart';
 import 'package:http/http.dart';
 
 class PhotoApi {

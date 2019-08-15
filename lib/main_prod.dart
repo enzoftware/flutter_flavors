@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_flavors/flavor_config.dart';
+import 'package:flutter_flavors/config/flavor_config.dart';
+import 'package:flutter_flavors/ui/app.dart';
 
-import 'app.dart';
+
 
 void main() {
   FlavorConfig(

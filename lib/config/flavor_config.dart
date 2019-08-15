@@ -2,7 +2,7 @@ import 'dart:core';
 import 'dart:core' as prefix0;
 
 import 'package:flutter/material.dart';
-import 'package:flutter_flavors/utils.dart';
+import 'package:flutter_flavors/utils/utils.dart';
 
 enum Flavor {
   DEV,
