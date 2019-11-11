@@ -30,53 +30,64 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('Flutter flavors'),
         ),
-        body: Center(
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  'You are in :',
-                ),
-                Text(
-                  '${FlavorConfig.instance.name} flavor',
-                  style: Theme.of(context).textTheme.display1,
-                ),
-                Text('Api url : ${FlavorConfig.instance.values.apiUrl}'),
-                FutureBuilder(
-                  future: widget.api.getphotos(),
-                  builder: (BuildContext context,
-                      AsyncSnapshot<List<Photo>> snapshot) {
-                    if (snapshot.hasData) {
-                      return Column(
-                        children: snapshot.data.map<Widget>((photo) {
-                          return Padding(
-                            child: Container(
-                              width: MediaQuery.of(context).size.width,
-                              child: Card(
-                                child: Column(
-                                  children: <Widget>[
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Image.network(photo.url),
-                                    ),
-                                    Center(child: Text(photo.title)),
-                                  ],
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Center(
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    'Hi there DevFest, you are in :',
+                    style: TextStyle(
+                      fontSize: 16.0,
+                    ),
+                  ),
+                  Text(
+                    '${FlavorConfig.instance.name} flavor',
+                    style: Theme.of(context).textTheme.display1,
+                  ),
+                  Text('Api url : ${FlavorConfig.instance.values.apiUrl}'),
+                  FutureBuilder(
+                    future: widget.api.getphotos(),
+                    builder: (BuildContext context,
+                        AsyncSnapshot<List<Photo>> snapshot) {
+                      if (snapshot.hasData) {
+                        return Column(
+                          children: snapshot.data.map<Widget>((photo) {
+                            return Padding(
+                              child: Container(
+                                width: MediaQuery.of(context).size.width,
+                                child: Card(
+                                  child: Column(
+                                    children: <Widget>[
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Image.network(photo.url),
+                                      ),
+                                      Center(
+                                          child: Text(
+                                        photo.title,
+                                        textAlign: TextAlign.start,
+                                        style: TextStyle(
+                                          fontSize: 24.0,
+                                        ),
+                                      )),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                            padding: const EdgeInsets.all(8.0),
-                          );
-                        }).toList(),
-                      );
-                    }
-                    return Container(
-                      child: Text('Loading...'),
-                    );
-                  },
-                )
-              ],
+                              padding: const EdgeInsets.all(8.0),
+                            );
+                          }).toList(),
+                        );
+                      }
+                      return CircularProgressIndicator();
+                    },
+                  )
+                ],
+              ),
             ),
           ),
         ),
